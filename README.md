@@ -199,31 +199,46 @@ c.	Else if percentage >= 36: Print “Division = Pass”
 #include <stdio.h>
 
 int main() {
-    int mark1, mark2, mark3, total;
-    float percentage;
+    int m1, m2, m3; // Marks
+    float tot, per; // Total and percentage
 
     // Input marks
-    printf("Enter marks for Subject 1: ");
-    scanf("%d", &mark1);
+    printf("Enter marks for subject 1: ");
+    scanf("%d", &m1);
 
-    printf("Enter marks for Subject 2: ");
-    scanf("%d", &mark2);
+    printf("Enter marks for subject 2: ");
+    scanf("%d", &m2);
 
-    printf("Enter marks for Subject 3: ");
-    scanf("%d", &mark3);
-
-    // Check minimum mark condition (e.g., 33 for pass in each subject)
-    if (mark1 < 33 || mark2 < 33 || mark3 < 33) {
-        printf("Fail (One or more subjects below minimum marks)\n");
-        return 0;
-    }
+    printf("Enter marks for subject 3: ");
+    scanf("%d", &m3);
 
     // Calculate total and percentage
-    total = mark1 + mark2 + mark3;
-    percentage = (float)total / 3;
+    tot = m1 + m2 + m3;
+    per = tot / 3;
 
     // Display total and percentage
-    printf("%d",total);
+    printf("Total Marks = %.2f\n", tot);
+    printf("Percentage = %.2f\n", per);
+
+    // Check marks and print division
+    if (m1 >= 40 && m2 >= 40 && m3 >= 40) {
+        if (per >= 60) {
+            printf("Division = First\n");
+        }
+        else if (per >= 48) {
+            printf("Division = Second\n");
+        }
+        else if (per >= 36) {
+            printf("Division = Pass\n");
+        }
+    } 
+    else {
+        printf("Division = Fail\n");
+    }
+
+    return 0;
+}
+
 
 ```
 ## OUTPUT:
